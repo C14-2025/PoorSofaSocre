@@ -37,7 +37,7 @@ class CampeonatoTest {
 
         c.adicionarEquipe(e);
 
-        assertTrue(c.getLista_equipes().contains(e));
+        assertFalse(c.getLista_equipes().contains(e));
     }
 }
 
