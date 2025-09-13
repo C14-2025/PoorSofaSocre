@@ -23,15 +23,6 @@ public class Jogador extends Pessoa implements Contratavel, Transferivel, Aposen
     }
 
     @Override
-    public void aposentarjogador() {
-        lista_jogadores.remove(this);
-        this.equipe.getLista_jogadores().remove(this);
-        this.equipe = null;
-        JogadorDao jogadorDao = new JogadorDao();
-        jogadorDao.deleteJogador(this.cpf);
-    }
-
-    @Override
     public void contratar(Equipe equipe){
         equipe.adcionaJogador(this);
         this.equipe = equipe;

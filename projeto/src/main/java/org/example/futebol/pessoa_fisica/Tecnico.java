@@ -38,25 +38,6 @@ public class Tecnico extends Pessoa implements Contratavel, Transferivel, Aposen
         equipe.adcionaTecnico(this);
     }
 
-    @Override
-    public void transferir(Equipe equipe_destino) {
-        EquipeDao equipeDao = new EquipeDao();
-        equipeDao.updateEquipeSemTecnico(this.equipe.getCnpj(), this.equipe);
-        this.equipe = equipe_destino;
-    }
-
-    @Override
-    public void aposentarTecnico(){
-        EquipeDao equipeDao = new EquipeDao();
-        equipeDao.updateEquipeSemTecnico(this.equipe.getCnpj(), equipe);
-        lista_tecnicos.remove(this);
-        if (this.equipe != null) {
-            this.equipe.setTecnico(null);
-            this.equipe = null;
-        }
-        TecnicoDao tecnicoDao = new TecnicoDao();
-        tecnicoDao.deleteTecnico(this.cpf);
-    }
 
     public String getNacionalidade() {
         return nacionalidade;
