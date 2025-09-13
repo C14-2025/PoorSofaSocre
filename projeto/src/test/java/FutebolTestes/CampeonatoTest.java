@@ -3,7 +3,7 @@ package FutebolTestes;
 import org.example.futebol.campeonatos.Campeonato;
 import org.example.futebol.pessoa_juridica.Equipe;
 import org.example.futebol.pessoa_juridica.Federacao;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
