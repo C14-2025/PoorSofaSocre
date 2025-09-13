@@ -42,9 +42,9 @@ public class Tecnico extends Pessoa implements Contratavel, Transferivel, Aposen
         return nome;
     }
 
-    public int getIdade() { return idade }
+    public int getIdade() { return idade; }
 
-    public String getCpf() { return cpf }
+    public String getCpf() { return cpf; }
 
     public String getNacionalidade() {
         return nacionalidade;
