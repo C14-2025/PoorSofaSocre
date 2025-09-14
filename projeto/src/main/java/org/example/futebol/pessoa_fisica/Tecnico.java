@@ -38,6 +38,13 @@ public class Tecnico extends Pessoa implements Contratavel, Transferivel, Aposen
         equipe.adcionaTecnico(this);
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public int getIdade() { return idade; }
+
+    public String getCpf() { return cpf; }
 
     public String getNacionalidade() {
         return nacionalidade;
