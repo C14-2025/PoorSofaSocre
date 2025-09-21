@@ -3,41 +3,55 @@ package FutebolTestes;
 import org.example.futebol.campeonatos.Campeonato;
 import org.example.futebol.pessoa_juridica.Equipe;
 import org.example.futebol.pessoa_juridica.Federacao;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 class CampeonatoTest {
 
+    private Campeonato campeonato;
+
+    @BeforeEach
+    void setUp() {
+        campeonato = new Campeonato("Brasileirão", "Brasil", 1000000, 1);
+    }
+
     @Test
     void deveCriarCampeonatoEAdicionarNaListaEstatica() {
-        Campeonato c = new Campeonato("Brasileirão", "Brasil", 1000000, 1);
-
-        assertEquals("Brasileirão", c.getNome());
-        assertEquals("Brasil", c.getLocal());
-        assertEquals(1000000, c.getPremio());
-        assertTrue(Campeonato.getListaCampeonato().contains(c));
+        assertEquals("Brasileirão", campeonato.getNome());
+        assertEquals("Brasil", campeonato.getLocal());
+        assertEquals(1000000, campeonato.getPremio());
+        assertTrue(Campeonato.getListaCampeonato().contains(campeonato));
     }
 
     @Test
-    void deveAdicionarFederacaoAoCampeonato() {
-        Campeonato c = new Campeonato("Libertadores", "América do Sul", 5000000, 2);
-        Federacao f = new Federacao("CONMEBOL", "123456");
+    void deveAdicionarFederacaoAoCampeonatoMock() {
+        // cria um mock de Federacao
+        Federacao federacaoMock = Mockito.mock(Federacao.class);
 
-        c.adicionarFederacao(f);
+        campeonato.adicionarFederacao(federacaoMock);
 
-        assertEquals(f, c.getFederacao());
-        assertTrue(Federacao.getListaFederacao().contains(f));
+        // verifica se federacao foi setada corretamente
+        assertEquals(federacaoMock, campeonato.getFederacao());
+
+        // verifica se o método adicionarCampeonato foi chamado dentro do Campeonato
+        verify(federacaoMock, times(1)).adicionarCampeonato(campeonato);
     }
 
     @Test
-    void deveAdicionarEquipeAoCampeonato() {
-        Campeonato c = new Campeonato("Copa do Brasil", "Brasil", 2000000, 3);
-        Equipe e = new Equipe("Flamengo", "111", 1895, "RJ");
+    void deveAdicionarEquipeAoCampeonatoMock() {
+        // cria um mock de Equipe
+        Equipe equipeMock = Mockito.mock(Equipe.class);
 
-        c.adicionarEquipe(e);
+        campeonato.adicionarEquipe(equipeMock);
 
-        assertTrue(c.getLista_equipes().contains(e));
+        // verifica se a equipe foi adicionada à lista do campeonato
+        assertTrue(campeonato.getLista_equipes().contains(equipeMock));
+
+        // opcional: podemos verificar se equipeMock interagiu de alguma forma (nesse caso não interage)
+        verifyNoInteractions(equipeMock);
     }
 }
-
