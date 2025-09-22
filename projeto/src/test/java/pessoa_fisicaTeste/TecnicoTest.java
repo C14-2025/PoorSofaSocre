@@ -25,7 +25,7 @@ public class TecnicoTest {
     }
 
     @org.junit.jupiter.api.Test
-    void testTransferir() {
+    void testeContratar() {
         Equipe equipeDestino = Mockito.mock(Equipe.class);
         Tecnico tecnico = new Tecnico("Guardiola",54,"11111111111","Espanha");
 
