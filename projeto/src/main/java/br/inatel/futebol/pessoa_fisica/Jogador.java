@@ -1,9 +1,10 @@
-package org.example.futebol.pessoa_fisica;
+package br.inatel.futebol.pessoa_fisica;
 
-import org.example.futebol.pessoa_juridica.Equipe;
-import org.example.futebol.interfaces.Aposentavel;
-import org.example.futebol.interfaces.Contratavel;
-import org.example.futebol.interfaces.Transferivel;
+//import br.inatel.DAO.JogadorDao;
+import br.inatel.futebol.interfaces.Aposentavel;
+import br.inatel.futebol.interfaces.Contratavel;
+import br.inatel.futebol.interfaces.Transferivel;
+import br.inatel.futebol.pessoa_juridica.Equipe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,15 @@ public class Jogador extends Pessoa implements Contratavel, Transferivel, Aposen
         this.nacionalidade = nacionalidade;
         this.posicao = posicao;
         lista_jogadores.add(this);
+    }
+
+    @Override
+    public void aposentarjogador() {
+        lista_jogadores.remove(this);
+        this.equipe.getLista_jogadores().remove(this);
+        this.equipe = null;
+        //JogadorDao jogadorDao = new JogadorDao();
+        //jogadorDao.deleteJogador(this.cpf);
     }
 
     @Override

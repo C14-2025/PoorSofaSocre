@@ -1,8 +1,8 @@
-package FutebolTestes;
+package futebolTests;
 
-import org.example.futebol.campeonatos.Campeonato;
-import org.example.futebol.pessoa_juridica.Equipe;
-import org.example.futebol.pessoa_juridica.Federacao;
+import br.inatel.futebol.campeonatos.Campeonato;
+import br.inatel.futebol.pessoa_juridica.Equipe;
+import br.inatel.futebol.pessoa_juridica.Federacao;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

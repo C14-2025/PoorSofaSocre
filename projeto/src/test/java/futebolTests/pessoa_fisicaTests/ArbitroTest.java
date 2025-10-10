@@ -1,7 +1,7 @@
-package pessoa_fisicaTeste;
+package futebolTests.pessoa_fisicaTests;
 
-import org.example.futebol.pessoa_fisica.Arbitro;
-import org.example.futebol.pessoa_juridica.Federacao;
+import br.inatel.futebol.pessoa_fisica.Arbitro;
+import br.inatel.futebol.pessoa_juridica.Federacao;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 

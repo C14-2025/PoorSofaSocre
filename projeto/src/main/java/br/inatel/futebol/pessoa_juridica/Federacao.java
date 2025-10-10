@@ -1,12 +1,13 @@
-package org.example.futebol.pessoa_juridica;
+package br.inatel.futebol.pessoa_juridica;
 
-import org.example.futebol.campeonatos.Campeonato;
-import org.example.futebol.pessoa_fisica.Arbitro;
+
+import br.inatel.futebol.campeonatos.Campeonato;
+import br.inatel.futebol.pessoa_fisica.Arbitro;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Federacao extends Empresa {
+public class Federacao extends Empresa{
 
     private List<Arbitro> lista_arbitro = new ArrayList<>();
     private List<Campeonato> lista_campeonato = new ArrayList<>();

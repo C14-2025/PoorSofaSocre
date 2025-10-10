@@ -1,4 +1,4 @@
-package org.example.futebol.pessoa_fisica;
+package br.inatel.futebol.pessoa_fisica;
 
 public abstract class Pessoa {
 
