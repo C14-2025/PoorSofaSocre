@@ -48,4 +48,6 @@ public class JogadorTest {
 
         assertEquals(equipeDestino, jogador.getEquipe());
     }
+
+
 }

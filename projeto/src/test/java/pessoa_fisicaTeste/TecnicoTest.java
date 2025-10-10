@@ -33,4 +33,6 @@ public class TecnicoTest {
 
         Assertions.assertEquals(equipeDestino, tecnico.getEquipe());
     }
+
+
 }
