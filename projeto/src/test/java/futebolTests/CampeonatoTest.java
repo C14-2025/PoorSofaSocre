@@ -1,8 +1,8 @@
-package FutebolTestes;
+package futebolTests;
 
-import org.example.futebol.campeonatos.Campeonato;
-import org.example.futebol.pessoa_juridica.Equipe;
-import org.example.futebol.pessoa_juridica.Federacao;
+import br.inatel.futebol.campeonatos.Campeonato;
+import br.inatel.futebol.pessoa_juridica.Equipe;
+import br.inatel.futebol.pessoa_juridica.Federacao;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -54,4 +54,18 @@ class CampeonatoTest {
         // opcional: podemos verificar se equipeMock interagiu de alguma forma (nesse caso não interage)
         verifyNoInteractions(equipeMock);
     }
+
+    @Test
+    void deveAdicionarMultiplasEquipes() {
+        Campeonato camp = new Campeonato("Paulistão", "SP", 800000, 3);
+        Equipe eq1 = mock(Equipe.class);
+        Equipe eq2 = mock(Equipe.class);
+
+        camp.adicionarEquipe(eq1);
+        camp.adicionarEquipe(eq2);
+
+        assertEquals(2, camp.getLista_equipes().size());
+    }
+
+
 }

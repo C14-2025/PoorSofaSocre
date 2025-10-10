@@ -1,7 +1,7 @@
-package org.example.futebol.pessoa_fisica;
+package br.inatel.futebol.pessoa_fisica;
 
-import org.example.futebol.pessoa_juridica.Federacao;
-import org.example.futebol.interfaces.Contratavel;
+import br.inatel.futebol.pessoa_juridica.Federacao;
+import br.inatel.futebol.interfaces.Contratavel;
 
 import java.util.ArrayList;
 import java.util.List;

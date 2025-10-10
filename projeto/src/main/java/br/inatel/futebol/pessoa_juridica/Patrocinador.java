@@ -1,14 +1,15 @@
-package org.example.futebol.pessoa_juridica;
+package br.inatel.futebol.pessoa_juridica;
 
-import org.example.futebol.interfaces.Contratavel;
+import br.inatel.futebol.interfaces.Contratavel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Patrocinador extends Empresa implements Contratavel {
 
-    private List<Equipe> lista_equipes = new ArrayList<>();
-    private List<Integer> valor_equipes = new ArrayList<>();
+    private Map<Equipe, Integer> listaEquipes = new HashMap<>();
     private static List<Patrocinador> lista_patrocinador = new ArrayList<>();
 
     @Override
@@ -20,10 +21,10 @@ public class Patrocinador extends Empresa implements Contratavel {
     public void mostrarInformacoes() {
         System.out.println("Nome: " + nome);
         System.out.println("Lista de equipes patrocinadas: ");
-        for (int i = 0; i < valor_equipes.size(); i++) {
-            System.out.println("Nome: " + lista_equipes.get(i).getNome());
-            System.out.println("Valor: " + valor_equipes.get(i));
-        }
+        listaEquipes.forEach((chave, valor) -> {
+            System.out.println("nome: " + chave.getNome());
+            System.out.println("valor: " + valor);
+        });
     }
 
     public Patrocinador(String nome, String cnpj) {
@@ -32,12 +33,7 @@ public class Patrocinador extends Empresa implements Contratavel {
     }
 
     public void adicionarEquipe(Equipe equipe, int valor) {
-        lista_equipes.add(equipe);
-        valor_equipes.add(valor);
-    }
-
-    public void setLista_Equipe(List<Equipe> lista_Equipe) {
-        this.lista_equipes = lista_Equipe;
+        listaEquipes.put(equipe, valor);
     }
 
     public static List<Patrocinador> getListaPatrocinador() {

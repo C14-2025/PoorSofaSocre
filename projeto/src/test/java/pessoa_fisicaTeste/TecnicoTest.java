@@ -1,14 +1,10 @@
 package pessoa_fisicaTeste;
 
-import org.example.futebol.pessoa_fisica.Jogador;
-import org.example.futebol.pessoa_fisica.Tecnico;
-import org.example.futebol.pessoa_juridica.Equipe;
+import br.inatel.futebol.pessoa_fisica.Tecnico;
+import br.inatel.futebol.pessoa_juridica.Equipe;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.mockito.Mockito;
-
-import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 import static org.junit.Assert.assertEquals;
 

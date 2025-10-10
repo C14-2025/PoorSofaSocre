@@ -1,7 +1,8 @@
 package pessoa_fisicaTeste;
 
-import org.example.futebol.pessoa_fisica.Jogador;
-import org.example.futebol.pessoa_juridica.Equipe;
+import br.inatel.futebol.pessoa_fisica.Jogador;
+import br.inatel.futebol.pessoa_fisica.Torcedor;
+import br.inatel.futebol.pessoa_juridica.Equipe;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -47,6 +48,16 @@ public class JogadorTest {
         jogador.transferir(equipeDestino);
 
         assertEquals(equipeDestino, jogador.getEquipe());
+    }
+
+    @Test
+    void deveIncrementarTorcedoresAoCriarNovoTorcedor() {
+        Equipe equipe = new Equipe("Galo", "999", 1908, "BH");
+        int torcedoresAntes = Equipe.getListaEquipes().get(0).getLista_jogadores().size();
+
+        new Torcedor("Zé", 25, "111", equipe);
+
+        assertEquals("Galo", equipe.getNome());
     }
 
 

@@ -1,7 +1,7 @@
-package org.example.futebol.campeonatos;
+package br.inatel.futebol.campeonatos;
 
-import org.example.futebol.pessoa_juridica.Equipe;
-import org.example.futebol.pessoa_juridica.Federacao;
+import br.inatel.futebol.pessoa_juridica.Equipe;
+import br.inatel.futebol.pessoa_juridica.Federacao;
 
 import java.util.ArrayList;
 import java.util.List;

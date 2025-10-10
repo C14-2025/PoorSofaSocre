@@ -1,9 +1,11 @@
-package org.example.futebol.pessoa_fisica;
+package br.inatel.futebol.pessoa_fisica;
 
-import org.example.futebol.pessoa_juridica.Equipe;
-import org.example.futebol.interfaces.Aposentavel;
-import org.example.futebol.interfaces.Contratavel;
-import org.example.futebol.interfaces.Transferivel;
+//import br.inatel.DAO.EquipeDao;
+//import br.inatel.DAO.TecnicoDao;
+import br.inatel.futebol.interfaces.Aposentavel;
+import br.inatel.futebol.interfaces.Contratavel;
+import br.inatel.futebol.interfaces.Transferivel;
+import br.inatel.futebol.pessoa_juridica.Equipe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,13 +40,25 @@ public class Tecnico extends Pessoa implements Contratavel, Transferivel, Aposen
         equipe.adcionaTecnico(this);
     }
 
-    public String getNome() {
-        return nome;
+    @Override
+    public void transferir(Equipe equipe_destino) {
+        //EquipeDao equipeDao = new EquipeDao();
+        //equipeDao.updateEquipeSemTecnico(this.equipe.getCnpj(), this.equipe);
+        this.equipe = equipe_destino;
     }
 
-    public int getIdade() { return idade; }
-
-    public String getCpf() { return cpf; }
+    @Override
+    public void aposentarTecnico(){
+        //EquipeDao equipeDao = new EquipeDao();
+        //equipeDao.updateEquipeSemTecnico(this.equipe.getCnpj(), equipe);
+        lista_tecnicos.remove(this);
+        if (this.equipe != null) {
+            this.equipe.setTecnico(null);
+            this.equipe = null;
+        }
+        //TecnicoDao tecnicoDao = new TecnicoDao();
+        //tecnicoDao.deleteTecnico(this.cpf);
+    }
 
     public String getNacionalidade() {
         return nacionalidade;
