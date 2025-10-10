@@ -5,9 +5,8 @@ import br.inatel.futebol.pessoa_juridica.Federacao;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.times;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 
 public class ArbitroTest {
 
@@ -24,7 +23,7 @@ public class ArbitroTest {
     @Test
     void deveContratarEAdicionarNaFederacao() {
         // Arrange
-        Federacao federacaoMock = Mockito.mock(Federacao.class);
+        Federacao federacaoMock = mock(Federacao.class);
         arbitro = new Arbitro("Daronco", 40, "12345678900"); // sua classe que tem o método contratar
 
         // Act
@@ -37,4 +36,6 @@ public class ArbitroTest {
         // Verifica se o campo 'federacao' do árbitro foi atualizado
         assertEquals(federacaoMock, arbitro.getFederacao());
     }
+
+
 }

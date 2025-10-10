@@ -54,4 +54,18 @@ class CampeonatoTest {
         // opcional: podemos verificar se equipeMock interagiu de alguma forma (nesse caso não interage)
         verifyNoInteractions(equipeMock);
     }
+
+    @Test
+    void deveAdicionarMultiplasEquipes() {
+        Campeonato camp = new Campeonato("Paulistão", "SP", 800000, 3);
+        Equipe eq1 = mock(Equipe.class);
+        Equipe eq2 = mock(Equipe.class);
+
+        camp.adicionarEquipe(eq1);
+        camp.adicionarEquipe(eq2);
+
+        assertEquals(2, camp.getLista_equipes().size());
+    }
+
+
 }

@@ -1,11 +1,10 @@
-package pessoaJuridicaTeste;
+package pessoa_juridicaTeste;
 
-import br.inatel.futebol.campeonatos.Campeonato;
-import br.inatel.futebol.pessoa_fisica.Arbitro;
-import br.inatel.futebol.pessoa_juridica.Federacao;
+import org.example.futebol.campeonatos.Campeonato;
+import org.example.futebol.pessoa_fisica.Arbitro;
+import org.example.futebol.pessoa_juridica.Federacao;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FederacaoTest {
 
@@ -20,7 +19,4 @@ public class FederacaoTest {
 
         assertTrue(Federacao.getListaFederacao().contains(fed));
     }
-
-
-
 }
