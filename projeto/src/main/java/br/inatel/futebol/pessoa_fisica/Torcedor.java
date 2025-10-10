@@ -1,6 +1,6 @@
-package org.example.futebol.pessoa_fisica;
+package br.inatel.futebol.pessoa_fisica;
 
-import org.example.futebol.pessoa_juridica.Equipe;
+import br.inatel.futebol.pessoa_juridica.Equipe;
 
 public class Torcedor extends Pessoa {
 

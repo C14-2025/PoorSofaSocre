@@ -1,23 +1,24 @@
-package org.example.futebol.pessoa_juridica;
+package br.inatel.futebol.pessoa_juridica;
 
-import org.example.futebol.campeonatos.Campeonato;
-import org.example.futebol.pessoa_fisica.Jogador;
-import org.example.futebol.pessoa_fisica.Tecnico;
+import br.inatel.futebol.campeonatos.Campeonato;
+import br.inatel.futebol.pessoa_fisica.Jogador;
+import br.inatel.futebol.pessoa_fisica.Tecnico;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Equipe extends Empresa {
 
-    private int fundacao;
+    private final int fundacao;
     private String sede;
     private List<Jogador> lista_jogadores = new ArrayList<>();
     private Tecnico tecnico;
-    private List<Patrocinador> lista_patrocinadores = new ArrayList<>();
-    private List<Integer> valor_patrocinadores = new ArrayList<>();
+    private Map<Patrocinador, Integer> listaPatrocinadores = new HashMap<>();
     private List<Campeonato> lista_campeonatos = new ArrayList<>();
     private static List<Equipe> lista_equipes = new ArrayList<>();
-    private static int quantidade_torcedores = 0;
+    private int quantidade_torcedores = 0;
 
     public Equipe(String nome,String cnpj, int fundacao, String sede) {
         super(nome,cnpj);
@@ -42,10 +43,10 @@ public class Equipe extends Empresa {
             System.out.println(jogador.getNome());
         }
         System.out.println("Lista de patrocinadores: ");
-        for (int i = 0; i < valor_patrocinadores.size(); i++) {
-            System.out.println("Nome: " + lista_patrocinadores.get(i).getNome());
-            System.out.println("Valor: " + valor_patrocinadores.get(i));
-        }
+        listaPatrocinadores.forEach((chave, valor) -> {
+            System.out.println("Nome: " + chave.getNome());
+            System.out.println("Valor: " + valor);
+        });
         System.out.println("Lista de campeonatos: ");
         for(Campeonato campeonato : lista_campeonatos) {
             System.out.println(campeonato.getNome());
@@ -77,8 +78,7 @@ public class Equipe extends Empresa {
     }
 
     public void adicionarPatrocinador(Patrocinador patrocinador, int valor) {
-        lista_patrocinadores.add(patrocinador);
-        valor_patrocinadores.add(valor);
+        listaPatrocinadores.put(patrocinador, valor);
         patrocinador.adicionarEquipe(this, valor);
     }
 
@@ -101,10 +101,6 @@ public class Equipe extends Empresa {
 
     public Tecnico getTecnico() {
         return tecnico;
-    }
-
-    public List<Integer> getValor_patrocinadores() {
-        return valor_patrocinadores;
     }
 
     public void setTecnico(Tecnico tecnico) {

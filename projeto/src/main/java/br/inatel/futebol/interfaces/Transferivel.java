@@ -1,6 +1,6 @@
-package org.example.futebol.interfaces;
+package br.inatel.futebol.interfaces;
 
-import org.example.futebol.pessoa_juridica.Equipe;
+import br.inatel.futebol.pessoa_juridica.Equipe;
 
 public interface Transferivel {
 

@@ -1,4 +1,4 @@
-package org.example.futebol.interfaces;
+package br.inatel.futebol.interfaces;
 
 public interface Aposentavel {
 

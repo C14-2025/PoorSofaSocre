@@ -1,4 +1,4 @@
-package org.example.futebol.pessoa_juridica;
+package br.inatel.futebol.pessoa_juridica;
 
 public abstract class Empresa {
 
