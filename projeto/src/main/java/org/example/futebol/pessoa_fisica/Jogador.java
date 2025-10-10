@@ -23,9 +23,9 @@ public class Jogador extends Pessoa implements Contratavel, Transferivel, Aposen
     }
 
     @Override
-    public void contratar(Equipe equipe){
+    public void contratar(Equipe equipeDestino){
         equipe.adcionaJogador(this);
-        this.equipe = equipe;
+        this.equipe = equipeDestino;
     }
 
     @Override

@@ -38,6 +38,11 @@ public class Tecnico extends Pessoa implements Contratavel, Transferivel, Aposen
         equipe.adcionaTecnico(this);
     }
 
+    @Override
+    public void transferir(Equipe equipeDestino) {
+        this.equipe = equipeDestino;
+    }
+
     public String getNome() {
         return nome;
     }
