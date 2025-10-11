@@ -1,4 +1,4 @@
-package futebolTests;
+package futebolTests.campeonatosTests;
 
 import br.inatel.futebol.campeonatos.Campeonato;
 import br.inatel.futebol.pessoa_juridica.Equipe;
