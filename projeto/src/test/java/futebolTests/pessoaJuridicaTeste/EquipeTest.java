@@ -1,4 +1,4 @@
-package pessoaJuridicaTeste;
+package futebolTests.pessoaJuridicaTeste;
 
 import br.inatel.futebol.pessoa_fisica.Jogador;
 import br.inatel.futebol.pessoa_fisica.Tecnico;
