@@ -14,7 +14,7 @@ public class Campeonato {
     private int premio;
     private Federacao federacao;
     private List<Equipe> lista_equipes = new ArrayList<>();
-    private static List<Campeonato> lista_campeonatos = new ArrayList<>();
+    private static final List<Campeonato> lista_campeonatos = new ArrayList<>();
 
     public Campeonato(String nome, String local, int premio, int idCampeonato) {
         this.nome = nome;
