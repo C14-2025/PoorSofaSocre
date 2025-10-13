@@ -4,4 +4,11 @@ Uma API completa sobre o mundo do futebol, com as mais variadas informações e 
 ---
 
 # Dependências
+Backend: Java 17
 
+---
+
+# Alunos
+| Participante  | Matrícula | Curso | GitHub |
+| ------------- | -----------------| ------- | ------ |
+| Pedro paulo de Paiva Junqueira | 1998 | GEC | [junqueora](https://github.com/junqueora) |
