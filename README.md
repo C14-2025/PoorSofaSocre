@@ -12,4 +12,4 @@ Backend: Java 17
 | Participante  | Matrícula | Curso | GitHub |
 | ------------- | -----------------| ------- | ------ |
 | Pedro Paulo de Paiva Junqueira | 1998 | GEC | [junqueora](https://github.com/junqueora) |
-| Luiz Otavio Ribeiro de Paiva| 613 | GEs | [luizOtpaiva](https://github.com/luizOtpaiva) |
+| Luiz Otavio Ribeiro de Paiva| 613 | GES | [luizOtpaiva](https://github.com/luizOtpaiva) |
