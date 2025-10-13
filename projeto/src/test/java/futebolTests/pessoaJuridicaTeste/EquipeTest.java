@@ -1,10 +1,13 @@
 package futebolTests.pessoaJuridicaTeste;
 
+import br.inatel.futebol.campeonatos.Campeonato;
 import br.inatel.futebol.pessoa_fisica.Jogador;
 import br.inatel.futebol.pessoa_fisica.Tecnico;
 import br.inatel.futebol.pessoa_juridica.Equipe;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
 import org.mockito.Mockito;
 import org.mockito.Mockito.*;
 
@@ -55,5 +58,16 @@ public class EquipeTest {
         equipeOrigem.transferirJogador(jogador1Mock, equipeDestino);
 
         assertEquals(equipeDestino.getLista_jogadores().get(0), jogador1Mock);
+    }
+
+    @Test
+    void deveAdicionarCampeonatoEChamarMetodoNoCampeonato() {
+        Equipe equipe = new Equipe("Corinthians", "98765432000100", 1910, "São Paulo");
+        Campeonato campeonatoMock = mock(Campeonato.class);
+
+        equipe.adicionarCampeonato(campeonatoMock);
+
+        assertTrue(equipe.getLista_jogadores().isEmpty()); // só pra garantir consistência
+        verify(campeonatoMock, times(1)).adicionarEquipe(equipe);
     }
 }

@@ -3,6 +3,7 @@ package futebolTests.pessoaJuridicaTeste;
 import br.inatel.futebol.campeonatos.Campeonato;
 import br.inatel.futebol.pessoa_fisica.Arbitro;
 import br.inatel.futebol.pessoa_juridica.Federacao;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertTrue;
@@ -18,7 +19,7 @@ public class FederacaoTest {
         fed.adicionarArbitro(arbitro);
         fed.adicionarCampeonato(camp);
 
-        assertTrue(Federacao.getListaFederacao().contains(fed));
+        Assertions.assertTrue(Federacao.getListaFederacao().contains(fed));
     }
 
 
