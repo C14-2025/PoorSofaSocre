@@ -11,4 +11,4 @@ Backend: Java 17
 # Alunos
 | Participante  | Matrícula | Curso | GitHub |
 | ------------- | -----------------| ------- | ------ |
-| Pedro paulo de Paiva Junqueira | 1998 | GEC | [junqueora](https://github.com/junqueora) |
+| Pedro Paulo de Paiva Junqueira | 1998 | GEC | [junqueora](https://github.com/junqueora) |
