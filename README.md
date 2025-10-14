@@ -14,3 +14,4 @@ Backend: Java 17
 | Pedro Paulo de Paiva Junqueira | 1998 | GEC | [junqueora](https://github.com/junqueora) |
 | Luiz Otavio Ribeiro de Paiva| 613 | GES | [luizOtpaiva](https://github.com/luizOtpaiva) |
 | Leandro Teixeira Ambrósio| 2118 | GEC | [Leandrotxr](https://github.com/Leandrotxr) |
+| Pedro Henrique Fernandes Pereira| 457 | GES | [PedroHFP04](https://github.com/PedroHFP04) |
