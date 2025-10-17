@@ -39,7 +39,7 @@ public class ArbitroTest {
     @Test
     void deveContratarEAdicionarNaFederacao() {
         Federacao federacaoMock = mock(Federacao.class);
-        arbitro = new Arbitro("Daronco", 40, "12345678900"); // sua classe que tem o método contratar
+        arbitro = new Arbitro("Daronco", 40, "12345678900");
 
         arbitro.contratar(federacaoMock);
 
@@ -55,7 +55,7 @@ public class ArbitroTest {
         ByteArrayOutputStream saida = new ByteArrayOutputStream();
         System.setOut(new PrintStream(saida));
 
-        arbitro = new Arbitro("Daronco", 40, "12345678900"); // sua classe que tem o método contratar
+        arbitro = new Arbitro("Daronco", 40, "12345678900");
         arbitro.contratar(federacaoMock);
         arbitro.mostrarInformacoes();
 

@@ -46,3 +46,28 @@ jobs:
         with:
           name: java-package
           path: projeto/target/*.jar
+  log_monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Criar diretório de logs
+        run: mkdir logs
+
+      - name: Gerar logs em tempo real
+        run: |
+          echo "Iniciando monitoramento de logs..."
+          echo "Horário: $(date)" >> logs/pipeline.log
+          echo "Pipeline em execução no repositório: ${{ github.repository }}" >> logs/pipeline.log
+          for i in {1..5}; do
+            echo "📜 Log #$i - $(date)" >> logs/pipeline.log
+            sleep 10
+          done
+          echo "Execução de logs concluída!" >> logs/pipeline.log
+
+      - name: Upload dos logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-logs
+          path: logs/pipeline.log
