@@ -38,7 +38,7 @@ jobs:
 
       - name: Compilar e empacotar
         run: |
-          cd AulaC14
+          cd projeto
           mvn package -DskipTests
 
       - name: Upload artefato da build
