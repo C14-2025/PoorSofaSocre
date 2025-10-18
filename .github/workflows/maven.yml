@@ -71,3 +71,46 @@ jobs:
         with:
           name: pipeline-logs
           path: logs/pipeline.log
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: [test, build, log_monitor]
+    steps:
+      - name: Gerar resumo da execução
+        id: summary
+        run: |
+          echo "✅ Pipeline finalizada com sucesso!" > summary.txt
+          echo "Repositório: ${{ github.repository }}" >> summary.txt
+          echo "Commit: ${{ github.sha }}" >> summary.txt
+          echo "Autor: ${{ github.actor }}" >> summary.txt
+          echo "Branch: ${{ github.ref_name }}" >> summary.txt
+          echo "Data: $(date)" >> summary.txt
+
+      - name: Upload resumo
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-summary
+          path: summary.txt
+
+      - name: Enviar e-mail de notificação
+        uses: dawidd6/action-send-mail@v4
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USER }}
+          password: ${{ secrets.EMAIL_PASS }}
+          subject: "🚀 CI/CD - Pipeline finalizada com sucesso ✅"
+          to: "venompedropereira@hotmail.com"
+          from: "CI/CD Pipeline <${{ secrets.EMAIL_USER }}>"
+          body: |
+            Olá!
+            
+            A pipeline do repositório **${{ github.repository }}** foi concluída com sucesso.
+            
+            🧩 Commit: ${{ github.sha }}
+            🧑‍💻 Autor: ${{ github.actor }}
+            🌿 Branch: ${{ github.ref_name }}
+            📅 Data: $(date)
+            
+            Você pode baixar o resumo completo nos artefatos do GitHub Actions.
+
